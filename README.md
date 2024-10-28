@@ -14,6 +14,9 @@ This repository contains a simple implementation of a **Token Bucket** rate-limi
 3. Run the application
    ```bash
    node app.js
+
+#Accessing the /api/resource endpoint more than the allowed limit within the specified time period will result in a response: "Too many requests. Please try again later."
+
 #Environment Variables
 The behavior of the rate limiter can be customized using environment variables:
 
