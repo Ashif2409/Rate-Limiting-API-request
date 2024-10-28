@@ -1,7 +1,7 @@
 // Token Bucket configuration
-const TOKEN_REFILL = process.env.REFILL_TOKEN || 1; // Tokens added per refill interval
-const REFILL_TIME = process.env.TIME || 12; // Time in seconds for refill interval
-const BUCKET_SIZE = process.env.BUCKET_SIZE || 5; // Maximum number of tokens
+const TOKEN_REFILL = process.env.REFILL_TOKEN || 1; 
+const REFILL_TIME = process.env.TIME || 12; 
+const BUCKET_SIZE = process.env.BUCKET_SIZE || 5; 
 
 const bucket = {};
 
@@ -20,17 +20,17 @@ class TokenBucket {
 
         // Refill tokens based on the time elapsed
         const newTokens = Math.floor((TOKEN_REFILL / REFILL_TIME) * (timeElapsed / 1000));
-        entry.cnt = Math.min(entry.cnt + newTokens, BUCKET_SIZE); // Update token count
-        entry.date = currentTime; // Update timestamp
+        entry.cnt = Math.min(entry.cnt + newTokens, BUCKET_SIZE); 
+        entry.date = currentTime; 
 
         // Check if there are available tokens
         if (entry.cnt > 0) {
             entry.cnt--; 
             bucket[ip] = entry; 
-            return true; // Allow request
+            return true; 
         } else {
             bucket[ip] = entry; 
-            return false; // Deny request
+            return false; 
         }
     }
 }
