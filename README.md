@@ -7,11 +7,13 @@ This repository contains a simple implementation of a **Token Bucket** rate-limi
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/token-bucket-rate-limiter.git
-   cd token-bucket-rate-limiter
+   cd RateLimiter_Using_TokenBucket
 2. Install the dependencies:
    ```bash
    npm install
-
+3. Run the application
+   ```bash
+   node app.js
 #Environment Variables
 The behavior of the rate limiter can be customized using environment variables:
 
